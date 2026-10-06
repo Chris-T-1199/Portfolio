@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Christopher Tremblay, développeur web et technicien audiovisuel à Montréal.">
+    <title>Christopher Tremblay | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <!-- Fond animé -->
+    <div class="bg-scene" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="blob blob-3"></span>
+        <div class="bg-grid"></div>
+    </div>
+
+    <header class="site-header">
+        <nav class="nav container">
+            <a href="#accueil" class="nav-logo">C<span>T</span></a>
+            <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#parcours">Parcours</a></li>
+                <li><a href="#contact" class="btn btn-small">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ACCUEIL -->
+        <section id="accueil" class="hero container">
+            <div class="hero-text">
+                <p class="eyebrow"><span class="status-dot"></span>Bonjour, je suis</p>
+                <h1><span class="gradient-text">Christopher</span><br>Tremblay</h1>
+                <p class="hero-role">
+                    <span class="typed" data-words='["Développeur web", "Passionné d&apos;IA", "Technicien audiovisuel", "Curieux de cybersécurité"]'>Développeur web</span><span class="caret" aria-hidden="true"></span>
+                </p>
+                <p class="hero-intro">
+                    Je conçois des sites et des applications web clairs, fiables et soignés,
+                    avec la même rigueur que j'apporte depuis des années sur les plateaux
+                    et les événements à Montréal.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projets" class="btn magnetic">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-outline magnetic">Me contacter</a>
+                </div>
+            </div>
+
+            <!-- PHOTO : Photo.jpg à la racine du dossier -->
+            <div class="hero-photo">
+                <div class="photo-tilt">
+                    <div class="photo-ring" aria-hidden="true"></div>
+                    <div class="photo-frame">
+                        <img src="Photo.jpg" alt="Photo de Christopher Tremblay"
+                             onerror="this.remove()">
+                        <div class="photo-placeholder" aria-hidden="true">
+                            <span>CT</span>
+                            <small>Votre photo ici</small>
+                        </div>
+                    </div>
+                    <div class="float-badge badge-1">📍 Montréal</div>
+                    <div class="float-badge badge-2"><span class="status-dot"></span> Disponible</div>
+                    <div class="float-badge badge-3">&lt;/&gt; Web &amp; IA</div>
+                </div>
+            </div>
+
+            <a href="#apropos" class="scroll-hint" aria-label="Défiler vers le bas"><span></span></a>
+        </section>
+
+        <!-- BANDEAU DÉFILANT -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span>HTML5</span><span>✦</span><span>CSS3</span><span>✦</span><span>JavaScript</span><span>✦</span><span>Node.js</span><span>✦</span><span>Express</span><span>✦</span><span>API REST</span><span>✦</span><span>IA générative</span><span>✦</span><span>Cybersécurité</span><span>✦</span><span>Git</span><span>✦</span>
+                <span>HTML5</span><span>✦</span><span>CSS3</span><span>✦</span><span>JavaScript</span><span>✦</span><span>Node.js</span><span>✦</span><span>Express</span><span>✦</span><span>API REST</span><span>✦</span><span>IA générative</span><span>✦</span><span>Cybersécurité</span><span>✦</span><span>Git</span><span>✦</span>
+            </div>
+        </div>
+
+        <!-- À PROPOS -->
+        <section id="apropos" class="section">
+            <div class="container about">
+                <h2 class="section-title">À propos</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>
+                            Après plusieurs années comme technicien audiovisuel et technicien
+                            de scène, je me spécialise maintenant en développement web.
+                            J'aime comprendre comment les choses fonctionnent, résoudre des
+                            problèmes concrets et livrer un travail impeccable, dans les délais.
+                        </p>
+                        <p>
+                            Mon expérience en événementiel m'a appris à travailler sous pression,
+                            à collaborer avec les clients et à lire des plans techniques.
+                            J'apporte ces mêmes réflexes à chaque projet de code.
+                        </p>
+                        <div class="stats">
+                            <div class="stat">
+                                <strong><span class="counter" data-target="9">0</span>+</strong>
+                                <span>ans d'expérience professionnelle</span>
+                            </div>
+                            <div class="stat">
+                                <strong><span class="counter" data-target="4">0</span></strong>
+                                <span>projets réalisés</span>
+                            </div>
+                            <div class="stat">
+                                <strong><span class="counter" data-target="3">0</span></strong>
+                                <span>domaines : web, IA, cybersécurité</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills">
+                        <h3>Compétences</h3>
+                        <ul class="tags">
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>JavaScript</li>
+                            <li>Node.js</li>
+                            <li>Express</li>
+                            <li>API REST</li>
+                            <li>Responsive design</li>
+                            <li>Git</li>
+                            <li>Outils d'IA générative</li>
+                            <li>Audiovisuel</li>
+                        </ul>
+                        <h3>Qualités</h3>
+                        <ul class="tags tags-soft">
+                            <li>Esprit critique</li>
+                            <li>Minutieux</li>
+                            <li>Sens de l'organisation</li>
+                            <li>Esprit d'équipe</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETS -->
+        <section id="projets" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Projets</h2>
+                <p class="section-lead">Une sélection de travaux récents. Cliquez sur un filtre pour trier.</p>
+
+                <div class="filters" role="group" aria-label="Filtrer les projets">
+                    <button class="filter active" data-filter="all">Tous</button>
+                    <button class="filter" data-filter="web">Web</button>
+                    <button class="filter" data-filter="api">API</button>
+                    <button class="filter" data-filter="jeu">Jeu / IA</button>
+                </div>
+
+                <div class="projects-grid">
+
+                    <!--
+                        Pour ajouter un projet : copiez un bloc <article class="project-card">,
+                        changez data-category (web, api, jeu), l'image, le texte et les liens.
+                        Images : déposez-les dans images/projets/
+                    -->
+
+                    <article class="project-card" data-category="web">
+                        <div class="project-thumb">
+                            <img src="images/projets/abm.jpg" alt="Aperçu du site Boréale Média & Associés" onerror="this.remove()">
+                            <span class="thumb-label">ABM</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Boréale Média &amp; Associés</h3>
+                            <p>Site vitrine pour une agence de communication : présentation de l'équipe, des services et page de contact, réalisé à partir d'un wireframe.</p>
+                            <ul class="tags tags-small">
+                                <li>HTML</li><li>CSS</li><li>JavaScript</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="link">Voir le site &rarr;</a>
+                                <a href="#" class="link link-muted">Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="api">
+                        <div class="project-thumb">
+                            <img src="images/projets/space-events.jpg" alt="Aperçu de l'application Upcoming Space Events" onerror="this.remove()">
+                            <span class="thumb-label">API</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Upcoming Space Events</h3>
+                            <p>Application qui affiche les prochains événements spatiaux à partir de l'API The Space Devs, avec un serveur Express et une mise en cache des réponses.</p>
+                            <ul class="tags tags-small">
+                                <li>Node.js</li><li>Express</li><li>API REST</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="link">Voir le site &rarr;</a>
+                                <a href="#" class="link link-muted">Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="web">
+                        <div class="project-thumb">
+                            <img src="images/projets/docu-fiction.jpg" alt="Aperçu du site Docu Fiction" onerror="this.remove()">
+                            <span class="thumb-label">DF</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Docu Fiction</h3>
+                            <p>Mini-site de quatre pages (Cthulhu, Ghibli, Samouraï) avec une navigation et un style uniformes sur l'ensemble du site.</p>
+                            <ul class="tags tags-small">
+                                <li>HTML</li><li>CSS</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="link">Voir le site &rarr;</a>
+                                <a href="#" class="link link-muted">Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="jeu">
+                        <div class="project-thumb">
+                            <img src="images/projets/dernier-signal.jpg" alt="Aperçu du jeu Dernier Signal" onerror="this.remove()">
+                            <span class="thumb-label">DS</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Dernier Signal</h3>
+                            <p>Jeu de survie et de plateforme 2D jouable dans le navigateur, conçu avec un pipeline assisté par l'IA : narratif, direction artistique, niveaux, sons et code.</p>
+                            <ul class="tags tags-small">
+                                <li>JavaScript</li><li>IA générative</li><li>Game design</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="link">Voir le projet &rarr;</a>
+                                <a href="#" class="link link-muted">Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PARCOURS -->
+        <section id="parcours" class="section">
+            <div class="container">
+                <h2 class="section-title">Parcours</h2>
+                <div class="timeline-grid">
+                    <div>
+                        <h3 class="timeline-heading">Expérience</h3>
+                        <ol class="timeline">
+                            <li>
+                                <span class="timeline-date">2023 – 2025</span>
+                                <h4>Technicien en audiovisuel</h4>
+                                <p class="timeline-org">Encore Global, Montréal</p>
+                                <p>Installation, réglage et maintenance du matériel de production; opération pendant les événements; lecture de schémas électroniques et de plans.</p>
+                            </li>
+                            <li>
+                                <span class="timeline-date">2023</span>
+                                <h4>Technicien de scène</h4>
+                                <p class="timeline-org">Groupe Paradoxe, Montréal</p>
+                                <p>Responsable des éléments scéniques et techniques de spectacles et d'événements.</p>
+                            </li>
+                            <li>
+                                <span class="timeline-date">2016 – 2023</span>
+                                <h4>Logistique et service à la clientèle</h4>
+                                <p class="timeline-org">Ssense, Aldo Group, Tim Hortons</p>
+                                <p>Gestion de l'inventaire, travail sous pression et service à la clientèle.</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <h3 class="timeline-heading">Formation</h3>
+                        <ol class="timeline">
+                            <li>
+                                <span class="timeline-date">2026</span>
+                                <h4>Formation en Programmation, IA et Cybersécurité</h4>
+                                <p class="timeline-org">CyberCap, Montréal</p>
+                            </li>
+                            <li>
+                                <span class="timeline-date">2023</span>
+                                <h4>Technique de scène</h4>
+                                <p class="timeline-org">Théâtre Paradoxe, Montréal</p>
+                            </li>
+                            <li>
+                                <span class="timeline-date">2023</span>
+                                <h4>Premiers secours, cardio-secours et DEA</h4>
+                                <p class="timeline-org">Fondation des maladies du cœur et de l'AVC</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section section-contact">
+            <div class="container contact">
+                <h2 class="section-title">Travaillons ensemble</h2>
+                <p class="section-lead">Je suis à la recherche de nouvelles opportunités. N'hésitez pas à m'écrire.</p>
+                <a href="mailto:tremblay.christopher@outlook.com" class="btn btn-large magnetic">tremblay.christopher@outlook.com</a>
+                <ul class="socials">
+                    <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                    <li><a href="#" aria-label="GitHub">GitHub</a></li>
+                    <li><a href="cv.pdf" download>Télécharger mon CV</a></li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Christopher Tremblay. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <a href="#accueil" class="back-to-top" aria-label="Retour en haut">&uarr;</a>
+
+    <script src="script.js"></script>
+</body>
+</html>
