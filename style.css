@@ -518,7 +518,7 @@ main, .site-footer { position: relative; z-index: 1; }
     background-clip: text;
     color: transparent;
 }
-.stat span:last-child { font-size: 0.82rem; color: var(--text-muted); }
+.stat > span:last-child { font-size: 0.82rem; color: var(--text-muted); }
 
 .skills {
     padding: 2rem;
