@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nous joindre | Atelier Boréal Médias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header>
+    <div class="logo">
+      <img src="images/abm-logo.png" alt="Boréale Média">
+      <span>Boréale Média</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="abm.html#accueil">Accueil</a></li>
+        <li><a href="abm.html#services">Services</a></li>
+        <li><a href="abm.html#team">Équipe</a></li>
+        <li><a href="squelette-abm-contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-contact">
+
+    <!-- SECTION 1 : TEXTE + FORMULAIRE -->
+    <section class="contact-hero">
+      <div class="contact-bg" aria-hidden="true"></div>
+
+      <div class="contact-copy reveal">
+        <span class="hero-badge">Prêt à démarrer ?</span>
+        <h1>Nous joindre</h1>
+        <p>Une question, un projet, une idée ? Écrivez-nous et nous vous répondrons dans les plus brefs délais.</p>
+
+        <div class="contact-info">
+          <a class="info-card" href="https://www.google.com/maps/search/?api=1&query=1751+rue+Richardson+Montr%C3%A9al" target="_blank" rel="noopener">
+            <span class="info-icon" aria-hidden="true">⌖</span>
+            <span>
+              <strong>Notre studio</strong>
+              1751, rue Richardson, bureau 3.105<br>
+              Montréal (Québec) H3K 1G6
+            </span>
+          </a>
+          <a class="info-card" href="mailto:info@boreal-medias.ca">
+            <span class="info-icon" aria-hidden="true">✉</span>
+            <span>
+              <strong>Par courriel</strong>
+              info@boreal-medias.ca
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <form class="formulaire-contact reveal" action="https://formspree.io/f/your-id" method="POST" novalidate>
+        <fieldset class="chips">
+          <legend>Type de projet</legend>
+          <label class="chip"><input type="radio" name="service" value="Production de contenu"><span>Production de contenu</span></label>
+          <label class="chip"><input type="radio" name="service" value="Stratégie numérique"><span>Stratégie numérique</span></label>
+          <label class="chip"><input type="radio" name="service" value="Support technologique"><span>Support technologique</span></label>
+          <label class="chip"><input type="radio" name="service" value="Autre"><span>Autre</span></label>
+        </fieldset>
+
+        <div class="field-row">
+          <label class="field">
+            <span class="field-label">Nom</span>
+            <span class="field-control"><input type="text" name="name" placeholder="Votre nom" autocomplete="name" required></span>
+            <small class="field-error">Veuillez indiquer votre nom.</small>
+          </label>
+          <label class="field">
+            <span class="field-label">Email</span>
+            <span class="field-control"><input type="email" name="email" placeholder="Votre email" autocomplete="email" required></span>
+            <small class="field-error">Veuillez entrer une adresse courriel valide.</small>
+          </label>
+        </div>
+
+        <label class="field">
+          <span class="field-label">Objet</span>
+          <span class="field-control"><input type="text" name="subject" placeholder="Objet du message"></span>
+        </label>
+
+        <label class="field">
+          <span class="field-label">Message <small class="char-count" aria-live="polite">0 / 500</small></span>
+          <span class="field-control"><textarea name="message" placeholder="Décrivez votre projet" maxlength="500" required></textarea></span>
+          <small class="field-error">Veuillez écrire un message.</small>
+        </label>
+
+        <button type="submit">
+          <span class="btn-label">Envoyer le message <span class="btn-arrow" aria-hidden="true">→</span></span>
+          <span class="spinner" aria-hidden="true"></span>
+        </button>
+
+        <p class="form-status" role="alert"></p>
+
+        <!-- Panneau affiché après l'envoi -->
+        <div class="form-success" role="status" aria-live="polite">
+          <svg class="success-check" viewBox="0 0 52 52" aria-hidden="true">
+            <circle cx="26" cy="26" r="24"></circle>
+            <path d="M15 27 l7 7 l15 -16"></path>
+          </svg>
+          <h2>Merci !</h2>
+          <p>Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais.</p>
+          <button type="button" class="form-reset">Envoyer un autre message</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- SECTION 2 : NOTRE DÉMARCHE -->
+    <section class="process">
+      <h2 class="reveal">Comment ça se passe ?</h2>
+      <p class="process-subtitle reveal">Chaque projet est une collaboration, pas une simple commande.</p>
+
+      <ol class="steps reveal">
+        <li class="step">
+          <span class="step-number">1</span>
+          <h3>Comprendre</h3>
+          <p>On prend le temps de bien saisir votre contexte, vos objectifs et vos contraintes.</p>
+        </li>
+        <li class="step">
+          <span class="step-number">2</span>
+          <h3>Proposer</h3>
+          <p>On vous présente des solutions adaptées à votre réalité et à votre budget.</p>
+        </li>
+        <li class="step">
+          <span class="step-number">3</span>
+          <h3>Accompagner</h3>
+          <p>On accompagne la mise en œuvre avec rigueur, étape par étape, jusqu'au résultat.</p>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Boréale Média & Associés. Tous droits réservés.</p>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+
+

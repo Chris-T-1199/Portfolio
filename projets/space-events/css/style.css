@@ -1,0 +1,393 @@
+/* ==========================================================================
+   Theme (inspired by Space Launch Now / Material Kit)
+   ========================================================================== */
+:root {
+    --color-primary: #2196f3;      /* Material blue: navbar, buttons, badges */
+    --color-primary-dark: #1976d2;
+    --color-info: #00bcd4;         /* Cyan: event category */
+    --color-heading: #ffffff;      /* Titles (light on the dark galaxy) */
+    --color-text: #e2e6ee;
+    --color-muted: #b4bccb;        /* Dates, descriptions */
+    --color-panel: rgba(8, 10, 28, 0.55); /* Dark glass panel over the galaxy */
+    --font-body: "Roboto", "Helvetica", "Arial", sans-serif;
+    --font-heading: "Roboto Slab", "Times New Roman", serif;
+}
+
+/* ==========================================================================
+   Base Page Layout
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--color-text);
+    background-color: #05060f;      /* Matches the galaxy while it loads */
+}
+
+/* Fixed galaxy canvas behind all content */
+#galaxy-background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Dark translucent panel: the galaxy shows through while text stays readable */
+main.container {
+    flex: 1;                        /* Pushes the footer to the bottom */
+    margin-bottom: 40px;
+    padding: 15px;
+    background-color: var(--color-panel);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+}
+
+@media (min-width: 769px) {
+    main.container {
+        padding: 20px 30px;
+    }
+}
+
+/* Page heading */
+.title {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2.3125rem;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin: 30px 0 25px;
+}
+
+/* Loading / error / empty messages */
+.events-status {
+    text-align: center;
+    color: var(--color-muted);
+}
+
+/* ==========================================================================
+   Navigation Bar
+   ========================================================================== */
+.navbar {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    padding: 0.625rem 0;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(33, 150, 243, 0.46);
+}
+
+.navbar-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-brand {
+    color: #ffffff;
+    font-size: 1.125rem;
+    padding: 0.5rem 0;
+}
+
+.navbar-links {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links a {
+    display: block;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 0.9375rem;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   Breadcrumb
+   ========================================================================== */
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0.75rem 1rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 0.25rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    padding: 0 0.5rem;
+    color: var(--color-muted);
+}
+
+.breadcrumb-item.active {
+    color: var(--color-muted);
+}
+
+/* ==========================================================================
+   Events List Feed Container
+   ========================================================================== */
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    max-width: 950px;
+    margin: 0 auto 60px;
+}
+
+/* ==========================================================================
+   Event Card Component (image 1/3, content 2/3)
+   ========================================================================== */
+.event-card {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.card-image-column {
+    flex: 0 0 calc(33.333% - 20px);
+}
+
+/* ==========================================================================
+   Card Image Wrapper & Element
+   ========================================================================== */
+.card-image-wrapper {
+    position: relative;
+    height: 250px;
+    border-radius: 6px;
+}
+
+.card-image,
+.colored-shadow {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.card-image {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 5px 15px -8px rgba(0, 0, 0, 0.24), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+/* Blurred copy of the image that glows beneath it */
+.colored-shadow {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    transform: scale(0.94);
+    filter: blur(12px);
+    opacity: 0.8;
+}
+
+.event-card:hover .card-image {
+    transform: translateY(-3px);
+}
+
+/* Shown when an event has no image */
+.card-image-placeholder {
+    background: linear-gradient(135deg, var(--color-primary), #0d47a1);
+    box-shadow: 0 5px 15px -8px rgba(0, 0, 0, 0.24), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   Card Content & Inner Elements
+   ========================================================================== */
+.card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Category & date row */
+.card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 10px;
+}
+
+.card-category {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-muted);
+}
+
+.card-category.text-info {
+    color: var(--color-info);
+}
+
+/* Main Event Title */
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 1.5625rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0.5rem 0 0.75rem;
+}
+
+.card-title,
+.card-title a {
+    color: var(--color-heading);
+}
+
+.card-title a:hover {
+    color: #64b5f6;             /* Lighter blue, readable on dark */
+}
+
+/* Location Badge */
+.badge {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    padding: 0.4em 0.9em;
+    border-radius: 0.25rem;
+}
+
+.badge-pill {
+    border-radius: 10rem;       /* Pill shape */
+}
+
+.badge-primary {
+    background-color: var(--color-primary);
+}
+
+/* Summary Description */
+.card-description {
+    color: var(--color-muted);
+    margin: 0.75rem 0 1rem;
+}
+
+/* Action Button (rendered as a link) */
+.btn-explore {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 0.75rem 1.875rem;
+    border-radius: 30px;        /* Round button */
+    box-shadow: 0 2px 2px 0 rgba(33, 150, 243, 0.14), 0 3px 1px -2px rgba(33, 150, 243, 0.2), 0 1px 5px 0 rgba(33, 150, 243, 0.12);
+    transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-explore .material-icons {
+    font-size: 18px;
+}
+
+.btn-explore:hover {
+    background-color: var(--color-primary-dark);
+    box-shadow: 0 14px 26px -12px rgba(33, 150, 243, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(33, 150, 243, 0.2);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 0.9375rem 0;
+}
+
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links a {
+    display: block;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0.9375rem;
+}
+
+.footer-links a:hover {
+    color: var(--color-primary);
+}
+
+.copyright {
+    margin: 0;
+    font-size: 0.875rem;
+    padding: 0.9375rem;
+}
+
+/* ==========================================================================
+   Responsive: stack cards vertically on small screens
+   ========================================================================== */
+@media (max-width: 768px) {
+    .event-card {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .card-image-column {
+        flex: none;
+        width: 100%;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+}

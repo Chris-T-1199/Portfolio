@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/galaxy.js" defer></script>
+    <script src="js/nasaInjectionScript.js" defer></script>
+    <title>Upcoming Space Events</title>
+</head>
+<body>
+
+    <!-- Animated galaxy background (decorative) -->
+    <canvas id="galaxy-background" aria-hidden="true"></canvas>
+
+    <nav class="navbar">
+        <div class="container navbar-inner">
+            <a class="navbar-brand" href="index.html"><b>Space Missions</b></a>
+            <ul class="navbar-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#events" class="active">Events</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="events" class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Events</li>
+            </ol>
+        </nav>
+
+        <h1 class="title">Upcoming Events</h1>
+
+        <!-- Injection de l'API -->
+        <div id="events-container">
+            <p class="events-status">Loading events...</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="https://thespacedevs.com/" target="_blank" rel="noopener noreferrer">Data by The Space Devs</a></li>
+            </ul>
+            <p class="copyright">&copy; 2026 Space Missions</p>
+        </div>
+    </footer>
+
+</body>
+</html>
